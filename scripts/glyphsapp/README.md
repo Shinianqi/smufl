@@ -42,6 +42,14 @@ To override values such as `designSize` and `sizeRange`, copy
 `smufl-config.example.json` to `<font file name>.smufl-config.json` next to the
 project.
 
+## Glyph names
+
+The script does not rename glyphs. For the compiled font, Glyphs derives the
+production name from the glyph's Unicode value (`uniE050`), so make sure every
+SMuFL glyph has its Unicode set before the final font export. If your workflow
+relies on glyph names matching codepoints, run your usual rename step before
+exporting.
+
 ## Files
 
 - `generate_font_metadata.py` — the script.
