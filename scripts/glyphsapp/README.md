@@ -38,9 +38,25 @@ entry does not appear, hold Option and choose **Script → Reload Scripts**
 
 The script never modifies the project. Fields without values are omitted.
 
-To override values such as `designSize` and `sizeRange`, copy
-`smufl-config.example.json` to `<font file name>.smufl-config.json` next to the
-project.
+## Configuration
+
+The script works without configuration. There are two optional ways to override
+values:
+
+- **Glyphs custom parameters**: add `SMuFL Design Size` or `SMuFL Size Range` in
+  Font Info → Font → Custom Parameters. Both use decipoints (1/720 inch):
+  `120` = 12 pt, `80, 480` = 8–48 pt.
+- **A config file**: copy `smufl-config.example.json` to
+  `<project file name>.smufl-config.json` next to the `.glyphs` file. The name
+  comes from the project file, not the family name; `null` means "do not
+  override".
+
+The config file can also override `engravingDefaults`, choose a `master`,
+supply `glyphNameAliases` or manual `glyphsWithAnchors`, point at a
+`metadataSource`, and switch sections with the `include*` flags. When both are
+set, the config file wins over the custom parameters.
+
+See `smufl-config.example.json` for all keys and units.
 
 ## Glyph names
 
